@@ -28,6 +28,17 @@ namespace SafeLinks_Decoder
             }
         }
 
+       
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();  // Hide the form when minimized
+            }
+        }
+
         private bool IsAlreadyRunning()
         {
             Process currentProcess = Process.GetCurrentProcess();
@@ -55,7 +66,7 @@ namespace SafeLinks_Decoder
         private void OnApplicationExit(object sender, EventArgs e)
         {
             Application.Exit();
-            trayIcon.Dispose(); 
+            trayIcon.Dispose();
         }
 
         private void SafeLinksDecoder_Load(object sender, EventArgs e)
@@ -97,7 +108,7 @@ namespace SafeLinks_Decoder
         private void Exit_Click(object sender, EventArgs e)
         {
             trayIcon.Visible = false;
-            Application.Exit(); 
+            Application.Exit();
         }
 
         public void decode()
@@ -168,20 +179,26 @@ namespace SafeLinks_Decoder
                 Clipboard.SetText(decodedUrl);
             }
         }
+        private void RestoreFromTray()
+        {
+            if (this.WindowState == FormWindowState.Minimized || !this.Visible)
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.Activate();
+            }
+        }
 
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
+           
             if (e.Button == MouseButtons.Left)
             {
-                this.Show();
-                this.WindowState = FormWindowState.Normal;
-                this.Activate();
+                RestoreFromTray();
             }
             else if (e.Button == MouseButtons.Right)
             {
-                this.Show();
-                this.WindowState = FormWindowState.Normal;
-                this.Activate();
                 ShowContextMenu();
             }
         }
@@ -214,6 +231,11 @@ namespace SafeLinks_Decoder
             {
                 MessageBox.Show($"Could not change the autorun setting: {ex.Message}", "SafeLinks Decoder", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void SafeLinksDecoder_Shown(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

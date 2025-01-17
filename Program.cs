@@ -7,10 +7,8 @@ internal static class Program
     {
         ApplicationConfiguration.Initialize();
 
-        // Створюємо форму, але не показуємо її
         SafeLinksDecoder mainForm = new SafeLinksDecoder();
 
-        // Запускаємо додаток без вказання форми
         Application.Run();
     }
 }

@@ -182,7 +182,7 @@
             Name = "SafeLinksDecoder";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
-            Text = "themeForm1";
+            Text = "SafeLinks Decoder";
             TransparencyKey = Color.Fuchsia;
             Load += SafeLinksDecoder_Load;
             ResumeLayout(false);
