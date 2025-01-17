@@ -3,6 +3,9 @@
 ## Description
 **SafeLinks Decoder** is a user-friendly Windows application designed to easily decode SafeLinks URLs. SafeLinks are often used to protect against phishing and other threats, but they can make accessing the original URL cumbersome. This application helps quickly retrieve the original URL from a SafeLink.
 
+![image](https://github.com/user-attachments/assets/cca8aa3d-c2c2-4712-8900-e138905bb900)
+
+
 ## Features
 - **Automatic SafeLink Decoding**: Paste a SafeLink into the text box, and the application automatically decodes it.
 - **System Tray Integration**: The application runs in the background and is accessible from the system tray.
@@ -24,10 +27,3 @@ We welcome contributions! Please open a new issue or submit a pull request to he
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
----
-
-### Additional Recommendations:
-1. **Screenshots**: Add screenshots of the interface for better user understanding.
-2. **README.md**: Place this content in a `README.md` file to automatically display it on the repository's main page.
-3. **Links**: Replace `your-repository` with the actual URL of your GitHub repository.
