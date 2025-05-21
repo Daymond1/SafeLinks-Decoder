@@ -27,7 +27,7 @@ We welcome contributions! Please open a new issue or submit a pull request to he
 
 ---
 
-Support me here: https://buymeacoffee.com/imroot/safelinks-decoder-your-essential-tool-instant-url-decoding
+Support me here: [By Me a Coffe](https://buymeacoffee.com/imroot/safelinks-decoder-your-essential-tool-instant-url-decoding)
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
